@@ -1,0 +1,1 @@
+JXL and Brotli both have files named decode.cc, so the OBJs must be put in separate directories. I put Highway OBJs in their own directory too for consistency.
