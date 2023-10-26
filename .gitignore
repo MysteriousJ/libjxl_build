@@ -1,7 +1,7 @@
 # Build output directories
-/build
-/build*
 /bazel*
+/build/*_objs
+*.lib
 
 # The downloaded corpora files for benchmark.
 /third_party/corpora

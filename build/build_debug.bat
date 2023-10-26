@@ -1,6 +1,6 @@
 @echo off
 
-cl -c /EHsc /MTd /W0 /wd4267 /wd4244 /Fo"jxl_objs/" -I .. -I . -I ../third_party/highway -I ../third_party/brotli/c/include ^
+cl -c /O2 /EHsc /MTd /W0 /wd4267 /wd4244 /Fo"jxl_objs/" -I .. -I . -I ../third_party/highway -I ../third_party/brotli/c/include ^
 ../lib/jxl/dec_ans.cc ^
 ../lib/jxl/dec_cache.cc ^
 ../lib/jxl/dec_context_map.cc ^
@@ -74,14 +74,16 @@ cl -c /EHsc /MTd /W0 /wd4267 /wd4244 /Fo"jxl_objs/" -I .. -I . -I ../third_party
 ../lib/jxl/render_pipeline/stage_write.cc ^
 ../lib/jxl/render_pipeline/stage_xyb.cc ^
 ../lib/jxl/render_pipeline/stage_ycbcr.cc ^
-../lib/jxl/render_pipeline/stage_upsampling.cc
+../lib/jxl/render_pipeline/stage_upsampling.cc ^
+../lib/threads/thread_parallel_runner.cc ^
+../lib/threads/thread_parallel_runner_internal.cc
 
-cl -c /EHsc /MTd /W0 /wd4267 /Fo"hwy_objs/" -I .. -I . -I ../third_party/highway ^
+cl -c /O2 /EHsc /MTd /W0 /wd4267 /Fo"hwy_objs/" -I .. -I . -I ../third_party/highway ^
 ../third_party/highway/hwy/aligned_allocator.cc ^
 ../third_party/highway/hwy/per_target.cc ^
 ../third_party/highway/hwy/targets.cc
 
-cl -c /EHsc /MTd /W0 /wd4267 /Fo"brotli_objs/" -I .. -I . -I ../third_party/brotli/c/include ^
+cl -c /O2 /EHsc /MTd /W0 /wd4267 /Fo"brotli_objs/" -I .. -I . -I ../third_party/brotli/c/include ^
 ../third_party/brotli/c/dec/decode.c ^
 ../third_party/brotli/c/dec/state.c ^
 ../third_party/brotli/c/dec/bit_reader.c ^

@@ -74,7 +74,9 @@ cl -c /O2 /EHsc /MT /W0 /wd4267 /wd4244 /Fo"jxl_objs/" -I .. -I . -I ../third_pa
 ../lib/jxl/render_pipeline/stage_write.cc ^
 ../lib/jxl/render_pipeline/stage_xyb.cc ^
 ../lib/jxl/render_pipeline/stage_ycbcr.cc ^
-../lib/jxl/render_pipeline/stage_upsampling.cc
+../lib/jxl/render_pipeline/stage_upsampling.cc ^
+../lib/threads/thread_parallel_runner.cc ^
+../lib/threads/thread_parallel_runner_internal.cc
 
 cl -c /O2 /EHsc /MT /W0 /wd4267 /Fo"hwy_objs/" -I .. -I . -I ../third_party/highway ^
 ../third_party/highway/hwy/aligned_allocator.cc ^
