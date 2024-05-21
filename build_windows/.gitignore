@@ -1,0 +1,4 @@
+jxl_objs
+hwy_objs
+jxl_dec_debug.lib
+jxl_dec_release.lib

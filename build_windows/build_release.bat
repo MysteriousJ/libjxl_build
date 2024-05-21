@@ -1,6 +1,6 @@
 @echo off
 
-cl -c /O2 /EHsc /MT /W0 /wd4267 /wd4244 /Fo"jxl_objs/" -I .. -I . -I ../third_party/highway -I ../third_party/brotli/c/include ^
+cl -c /O2 /EHsc /MT /W0 /wd4267 /wd4244 /Fo"jxl_objs/" /D"JPEGXL_ENABLE_TRANSCODE_JPEG=0" /D"JPEGXL_ENABLE_BOXES=0" -I .. -I . -I ../third_party/highway ^
 ../lib/jxl/dec_ans.cc ^
 ../lib/jxl/dec_cache.cc ^
 ../lib/jxl/dec_context_map.cc ^
@@ -83,16 +83,4 @@ cl -c /O2 /EHsc /MT /W0 /wd4267 /Fo"hwy_objs/" -I .. -I . -I ../third_party/high
 ../third_party/highway/hwy/per_target.cc ^
 ../third_party/highway/hwy/targets.cc
 
-cl -c /O2 /EHsc /MT /W0 /wd4267 /Fo"brotli_objs/" -I .. -I . -I ../third_party/brotli/c/include ^
-../third_party/brotli/c/dec/decode.c ^
-../third_party/brotli/c/dec/state.c ^
-../third_party/brotli/c/dec/bit_reader.c ^
-../third_party/brotli/c/dec/huffman.c ^
-../third_party/brotli/c/common/dictionary.c ^
-../third_party/brotli/c/common/shared_dictionary.c ^
-../third_party/brotli/c/common/constants.c ^
-../third_party/brotli/c/common/context.c ^
-../third_party/brotli/c/common/platform.c ^
-../third_party/brotli/c/common/transform.c
-
-lib jxl_objs/*.obj hwy_objs/*.obj brotli_objs/*.obj /out:jxl_dec_release.lib
+lib jxl_objs/*.obj hwy_objs/*.obj /out:jxl_dec_release.lib
