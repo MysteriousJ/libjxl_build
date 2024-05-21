@@ -1,0 +1,4 @@
+brotli_objs
+hwy_objs
+jxl_objs
+jxl_dec.a
